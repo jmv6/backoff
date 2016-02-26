@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Clients</h1>
+
+<table class="table table-stripes">
+  <thead>
+    <tr>
+      <th>Client ID</th>
+      <th>First name</th>
+      <th>Surname</th>
+      <th>Address 1</th>
+      <th>Address 2</th>
+      <th>Town</th>
+      <th>Post code</th>
+      <th>Country</th>
+      <th>Preferred tel</th>
+      <th>Home telephone</th>
+      <th>Mobile telephone</th>
+      <th>Best time</th>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @client.each do |client| %>
+      <tr>
+        <td><%= client.id %></td>
+        <td><%= client.first_name %></td>
+        <td><%= client.surname %></td>
+        <td><%= client.address_1 %></td>
+        <td><%= client.address_2 %></td>
+        <td><%= client.town %></td>
+        <td><%= client.post_code %></td>
+        <td><%= client.country %></td>
+        <td><%= client.preferred_tel %></td>
+        <td><%= client.home_telephone %></td>
+        <td><%= client.mobile_telephone %></td>
+        <td><%= client.best_time %></td>
+        <td><a href="mailto:<%= client.email %>"><%= client.email %></a></td>
+        <td><%= link_to 'Show', client %></td>
+        <% if current_user.admin? %>
+        <td><%= link_to 'Edit', edit_client_path(client) %></td>
+        <td><%= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Client', new_client_path %>

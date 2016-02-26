@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Pension Transfers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Client</th>
+      <th>User</th>
+      <th>Loa signed</th>
+      <th>Loa sent to provider</th>
+      <th>Completed</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pension_transfers.each do |pension_transfer| %>
+      <tr>
+        <td><%= pension_transfer.client %></td>
+        <td><%= pension_transfer.user %></td>
+        <td><%= pension_transfer.loa_signed %></td>
+        <td><%= pension_transfer.loa_sent_to_provider %></td>
+        <td><%= pension_transfer.completed %></td>
+        <td><%= link_to 'Show', pension_transfer %></td>
+        <td><%= link_to 'Edit', edit_pension_transfer_path(pension_transfer) %></td>
+        <td><%= link_to 'Destroy', pension_transfer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pension transfer', new_pension_transfer_path %>

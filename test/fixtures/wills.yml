@@ -1,0 +1,71 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  client_id: 
+  spouse: false
+  spouse_name: MyString
+  relationship: MyString
+  spouse_executor: false
+  second_executor: false
+  second_executor_name: MyString
+  second_executor_city: MyString
+  alternate_executor: false
+  alternate_executor_name: MyString
+  alternate_executor_city: MyString
+  alternate_executor_country: MyString
+  children: MyText
+  spouse_guardian: false
+  alternate_guardian: MyString
+  alternate_guardian_address: MyText
+  gift_conditions: false
+  gift_conditions_age: 1
+  specific_gifts: MyText
+  estate_residue: MyText
+  wipeout_clause: false
+  wipeout_distribution: MyText
+  pets: false
+  pet_details_carers: MyText
+  additional_clauses: MyText
+  notes: MyText
+  draft_created: false
+  draft_sent_to_client: false
+  client_approval: false
+  final_version_sent_to_client: false
+  payment_received: false
+  completed: false
+
+two:
+  user_id: 
+  client_id: 
+  spouse: false
+  spouse_name: MyString
+  relationship: MyString
+  spouse_executor: false
+  second_executor: false
+  second_executor_name: MyString
+  second_executor_city: MyString
+  alternate_executor: false
+  alternate_executor_name: MyString
+  alternate_executor_city: MyString
+  alternate_executor_country: MyString
+  children: MyText
+  spouse_guardian: false
+  alternate_guardian: MyString
+  alternate_guardian_address: MyText
+  gift_conditions: false
+  gift_conditions_age: 1
+  specific_gifts: MyText
+  estate_residue: MyText
+  wipeout_clause: false
+  wipeout_distribution: MyText
+  pets: false
+  pet_details_carers: MyText
+  additional_clauses: MyText
+  notes: MyText
+  draft_created: false
+  draft_sent_to_client: false
+  client_approval: false
+  final_version_sent_to_client: false
+  payment_received: false
+  completed: false

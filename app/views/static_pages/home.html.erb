@@ -1,0 +1,116 @@
+<div class="container">
+	<div class="col-md-12">
+		<div class="col-md-12">
+			<div class="row">
+				<h1>Pending Pension Transfers</h1>
+				<table class="table table-striped">
+				  <thead>
+				    <tr>
+				      <th>Client</th>
+				      <th>User</th>
+				      <th>LOA signed</th>
+				      <th>LOA sent to provider</th>
+				      <th>Completed</th>
+				      <th colspan="3"></th>
+				    </tr>
+				  </thead>
+
+				  <tbody>
+				    <% @pension.each do |pension_transfer| %>
+				      <tr>
+				        <td><%= pension_transfer.client %></td>
+				        <td><%= pension_transfer.user %></td>
+				        <td><%= pension_transfer.loa_signed %></td>
+				        <td><%= pension_transfer.loa_sent_to_provider %></td>
+				        <td><%= pension_transfer.completed %></td>
+				        <td><%= link_to 'Show', pension_transfer %></td>
+				        <td><%= link_to 'Edit', edit_pension_transfer_path(pension_transfer) %></td>
+				        <td><%= link_to 'Destroy', pension_transfer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+				      </tr>
+				    <% end %>
+				  </tbody>
+				</table>
+			</div>
+
+			<div class="row">
+				<h1>Pending Wills</h1>
+				<table class="table table-striped">
+				  <thead>
+				    <tr>
+				      <th>Client First Name</th>
+			      	  <th>Client Surname</th>
+				      <th>Draft created</th>
+				      <th>Draft sent to client</th>
+				      <th>Client approval</th>
+				      <th>Final version sent to client</th>
+				      <th>Payment received</th>
+				      <th>Completed</th>
+				      <th colspan="3"></th>
+				    </tr>
+				  </thead>
+
+				  <tbody>
+				    <% @will.each do |will| %>
+				      <tr>
+				        <td><%= trust.client.first_name %></td>
+			        	<td><%= trust.client.surname %></td>
+				        <td><%= will.draft_created %></td>
+				        <td><%= will.draft_sent_to_client %></td>
+				        <td><%= will.client_approval %></td>
+				        <td><%= will.final_version_sent_to_client %></td>
+				        <td><%= will.payment_received %></td>
+				        <td><%= will.completed %></td>
+				        <td><%= link_to 'Show', will %></td>
+				        <td><%= link_to 'Edit', edit_will_path(will) %></td>
+				        <td><%= link_to 'Destroy', will, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+				      </tr>
+				    <% end %>
+				  </tbody>
+				</table>
+			</div>
+
+			<div class="row">
+			<h1>Pending Life Policy Trusts</h1>
+			<table class="table table-striped">
+			  <thead>
+			    <tr>
+			      <th>Client First Name</th>
+			      <th>Client Surname</th>
+			      <th>Provider</th>
+			      <th>Type of cover</th>
+			      <th>Total value</th>
+			      <th>Payment received</th>
+			      <th>LOA sent to client</th>
+			      <th>LOA signed and received</th>
+			      <th>LOA sent to provider</th>
+			      <th>Info received from provider</th>
+			      <th>Completed</th>
+			      <th colspan="3"></th>
+			    </tr>
+			  </thead>
+
+			  <tbody>
+			    <% @trust.each do |trust| %>
+			      <tr>
+			        <td><%= trust.client.first_name %></td>
+			        <td><%= trust.client.surname %></td>
+			        <td><%= trust.provider %></td>
+			        <td><%= trust.type_of_cover %></td>
+			        <td><%= trust.total_value %></td>
+			        <td><%= trust.payment_received %></td>
+			        <td><%= trust.loa_sent_to_client %></td>
+			        <td><%= trust.loa_signed_and_received %></td>
+			        <td><%= trust.loa_sent_to_provider %></td>
+			        <td><%= trust.information_received_from_provider %></td>
+			        <td><%= trust.completed %></td>
+			        <td><%= link_to 'Show', trust %></td>
+			        <td><%= link_to 'Edit', edit_trust_path(trust) %></td>
+			        <td><%= link_to 'Destroy', trust, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+			      </tr>
+			    <% end %>
+			  </tbody>
+			</table>
+		</div>
+		</div>
+	</div>
+</div>

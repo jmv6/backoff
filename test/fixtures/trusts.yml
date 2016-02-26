@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  client_id: 
+  provider: MyString
+  type_of_cover: MyString
+  total_value: MyString
+  payment_received: false
+  loa_sent_to_client: false
+  loa_signed_and_received: false
+  loa_sent_to_provider: false
+  information_received_from_provider: false
+  trust_docs_sent_to_client: false
+  trust_docs_signed_and_received: false
+  sent_to_trustees: false
+  signed_by_trustees: false
+  completed: false
+  notes: MyText
+
+two:
+  user_id: 
+  client_id: 
+  provider: MyString
+  type_of_cover: MyString
+  total_value: MyString
+  payment_received: false
+  loa_sent_to_client: false
+  loa_signed_and_received: false
+  loa_sent_to_provider: false
+  information_received_from_provider: false
+  trust_docs_sent_to_client: false
+  trust_docs_signed_and_received: false
+  sent_to_trustees: false
+  signed_by_trustees: false
+  completed: false
+  notes: MyText

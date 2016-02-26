@@ -1,0 +1,84 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @trust.user %>
+</p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @trust.client %>
+</p>
+
+<p>
+  <strong>Provider:</strong>
+  <%= @trust.provider %>
+</p>
+
+<p>
+  <strong>Type of cover:</strong>
+  <%= @trust.type_of_cover %>
+</p>
+
+<p>
+  <strong>Total value:</strong>
+  <%= @trust.total_value %>
+</p>
+
+<p>
+  <strong>Payment received:</strong>
+  <%= @trust.payment_received %>
+</p>
+
+<p>
+  <strong>Loa sent to client:</strong>
+  <%= @trust.loa_sent_to_client %>
+</p>
+
+<p>
+  <strong>Loa signed and received:</strong>
+  <%= @trust.loa_signed_and_received %>
+</p>
+
+<p>
+  <strong>Loa sent to provider:</strong>
+  <%= @trust.loa_sent_to_provider %>
+</p>
+
+<p>
+  <strong>Information received from provider:</strong>
+  <%= @trust.information_received_from_provider %>
+</p>
+
+<p>
+  <strong>Trust docs sent to client:</strong>
+  <%= @trust.trust_docs_sent_to_client %>
+</p>
+
+<p>
+  <strong>Trust docs signed and received:</strong>
+  <%= @trust.trust_docs_signed_and_received %>
+</p>
+
+<p>
+  <strong>Sent to trustees:</strong>
+  <%= @trust.sent_to_trustees %>
+</p>
+
+<p>
+  <strong>Signed by trustees:</strong>
+  <%= @trust.signed_by_trustees %>
+</p>
+
+<p>
+  <strong>Completed:</strong>
+  <%= @trust.completed %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @trust.notes %>
+</p>
+
+<%= link_to 'Edit', edit_trust_path(@trust) %> |
+<%= link_to 'Back', trusts_path %>

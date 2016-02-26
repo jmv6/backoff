@@ -1,0 +1,149 @@
+<%= form_for(@will) do |f| %>
+  <% if @will.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@will.errors.count, "error") %> prohibited this will from being saved:</h2>
+
+      <ul>
+      <% @will.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :client_id %><br>
+    <%= f.text_field :client_id %>
+  </div>
+  <div class="field">
+    <%= f.label :spouse %><br>
+    <%= f.check_box :spouse %>
+  </div>
+  <div class="field">
+    <%= f.label :spouse_name %><br>
+    <%= f.text_field :spouse_name %>
+  </div>
+  <div class="field">
+    <%= f.label :relationship %><br>
+    <%= f.text_field :relationship %>
+  </div>
+  <div class="field">
+    <%= f.label :spouse_executor %><br>
+    <%= f.check_box :spouse_executor %>
+  </div>
+  <div class="field">
+    <%= f.label :second_executor %><br>
+    <%= f.check_box :second_executor %>
+  </div>
+  <div class="field">
+    <%= f.label :second_executor_name %><br>
+    <%= f.text_field :second_executor_name %>
+  </div>
+  <div class="field">
+    <%= f.label :second_executor_city %><br>
+    <%= f.text_field :second_executor_city %>
+  </div>
+  <div class="field">
+    <%= f.label :alternate_executor %><br>
+    <%= f.check_box :alternate_executor %>
+  </div>
+  <div class="field">
+    <%= f.label :alternate_executor_name %><br>
+    <%= f.text_field :alternate_executor_name %>
+  </div>
+  <div class="field">
+    <%= f.label :alternate_executor_city %><br>
+    <%= f.text_field :alternate_executor_city %>
+  </div>
+  <div class="field">
+    <%= f.label :alternate_executor_country %><br>
+    <%= f.text_field :alternate_executor_country %>
+  </div>
+  <div class="field">
+    <%= f.label :children %><br>
+    <%= f.text_area :children %>
+  </div>
+  <div class="field">
+    <%= f.label :spouse_guardian %><br>
+    <%= f.check_box :spouse_guardian %>
+  </div>
+  <div class="field">
+    <%= f.label :alternate_guardian %><br>
+    <%= f.text_field :alternate_guardian %>
+  </div>
+  <div class="field">
+    <%= f.label :alternate_guardian_address %><br>
+    <%= f.text_area :alternate_guardian_address %>
+  </div>
+  <div class="field">
+    <%= f.label :gift_conditions %><br>
+    <%= f.check_box :gift_conditions %>
+  </div>
+  <div class="field">
+    <%= f.label :gift_conditions_age %><br>
+    <%= f.number_field :gift_conditions_age %>
+  </div>
+  <div class="field">
+    <%= f.label :specific_gifts %><br>
+    <%= f.text_area :specific_gifts %>
+  </div>
+  <div class="field">
+    <%= f.label :estate_residue %><br>
+    <%= f.text_area :estate_residue %>
+  </div>
+  <div class="field">
+    <%= f.label :wipeout_clause %><br>
+    <%= f.check_box :wipeout_clause %>
+  </div>
+  <div class="field">
+    <%= f.label :wipeout_distribution %><br>
+    <%= f.text_area :wipeout_distribution %>
+  </div>
+  <div class="field">
+    <%= f.label :pets %><br>
+    <%= f.check_box :pets %>
+  </div>
+  <div class="field">
+    <%= f.label :pet_details_carers %><br>
+    <%= f.text_area :pet_details_carers %>
+  </div>
+  <div class="field">
+    <%= f.label :additional_clauses %><br>
+    <%= f.text_area :additional_clauses %>
+  </div>
+  <div class="field">
+    <%= f.label :notes %><br>
+    <%= f.text_area :notes %>
+  </div>
+  <div class="field">
+    <%= f.label :draft_created %><br>
+    <%= f.check_box :draft_created %>
+  </div>
+  <div class="field">
+    <%= f.label :draft_sent_to_client %><br>
+    <%= f.check_box :draft_sent_to_client %>
+  </div>
+  <div class="field">
+    <%= f.label :client_approval %><br>
+    <%= f.check_box :client_approval %>
+  </div>
+  <div class="field">
+    <%= f.label :final_version_sent_to_client %><br>
+    <%= f.check_box :final_version_sent_to_client %>
+  </div>
+  <div class="field">
+    <%= f.label :payment_received %><br>
+    <%= f.check_box :payment_received %>
+  </div>
+  <div class="field">
+    <%= f.label :completed %><br>
+    <%= f.check_box :completed %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

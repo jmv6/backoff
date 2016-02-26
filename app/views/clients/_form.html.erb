@@ -1,0 +1,156 @@
+<%= form_for(@client) do |f| %>
+  <% if @client.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@client.errors.count, "error") %> prohibited this client from being saved:</h2>
+
+      <ul>
+      <% @client.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id, :value => current_user.id%>
+  </div>
+  <div class="field">
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :surname %><br>
+    <%= f.text_field :surname %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :date_of_birth %><br>
+    <%= f.text_field :date_of_birth %>
+  </div>
+  <div class="field">
+    <%= f.label :employment_status %><br>
+    <%= f.text_field :employment_status %>
+  </div>
+  <div class="field">
+    <%= f.label :marital_status %><br>
+    <%= f.text_field :marital_status %>
+  </div>
+  <div class="field">
+    <%= f.label :maiden_name %><br>
+    <%= f.text_field :maiden_name %>
+  </div>
+  <div class="field">
+    <%= f.label :number_of_dependents %><br>
+    <%= f.number_field :number_of_dependents %>
+  </div>
+  <div class="field">
+    <%= f.label :dependents_names_ages %><br>
+    <%= f.text_area :dependents_names_ages %>
+  </div>
+  <div class="field">
+    <%= f.label :nationality %><br>
+    <%= f.text_field :nationality %>
+  </div>
+  <div class="field">
+    <%= f.label :planned_retirement_age %><br>
+    <%= f.number_field :planned_retirement_age %>
+  </div>
+  <div class="field">
+    <%= f.label :smoker %><br>
+    <%= f.check_box :smoker %>
+  </div>
+  <div class="field">
+    <%= f.label :address_1 %><br>
+    <%= f.text_field :address_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :address_2 %><br>
+    <%= f.text_field :address_2 %>
+  </div>
+  <div class="field">
+    <%= f.label :town %><br>
+    <%= f.text_field :town %>
+  </div>
+  <div class="field">
+    <%= f.label :post_code %><br>
+    <%= f.text_field :post_code %>
+  </div>
+  <div class="field">
+    <%= f.label :country %><br>
+    <%= f.text_field :country %>
+  </div>
+  <div class="field">
+    <%= f.label :preferred_tel %><br>
+    <%= f.text_field :preferred_tel %>
+  </div>
+  <div class="field">
+    <%= f.label :home_telephone %><br>
+    <%= f.text_field :home_telephone %>
+  </div>
+  <div class="field">
+    <%= f.label :mobile_telephone %><br>
+    <%= f.text_field :mobile_telephone %>
+  </div>
+  <div class="field">
+    <%= f.label :best_time %><br>
+    <%= f.text_area :best_time %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :children_under_age %><br>
+    <%= f.check_box :children_under_age %>
+  </div>
+  <div class="field">
+    <%= f.label :employment_permanent %><br>
+    <%= f.check_box :employment_permanent %>
+  </div>
+  <div class="field">
+    <%= f.label :occupation %><br>
+    <%= f.text_field :occupation %>
+  </div>
+  <div class="field">
+    <%= f.label :sick_pay_benefit %><br>
+    <%= f.check_box :sick_pay_benefit %>
+  </div>
+  <div class="field">
+    <%= f.label :controlling_director %><br>
+    <%= f.text_field :controlling_director %>
+  </div>
+  <div class="field">
+    <%= f.label :shareholding %><br>
+    <%= f.number_field :shareholding %>
+  </div>
+  <div class="field">
+    <%= f.label :year1_profit %><br>
+    <%= f.number_field :year1_profit %>
+  </div>
+  <div class="field">
+    <%= f.label :year2_profit %><br>
+    <%= f.number_field :year2_profit %>
+  </div>
+  <div class="field">
+    <%= f.label :year3_profit %><br>
+    <%= f.number_field :year3_profit %>
+  </div>
+  <div class="field">
+    <%= f.label :accountant_details %><br>
+    <%= f.text_area :accountant_details %>
+  </div>
+  <div class="field">
+    <%= f.label :annual_income %><br>
+    <%= f.number_field :annual_income %>
+  </div>
+  <div class="field">
+    <%= f.label :annual_expenses %><br>
+    <%= f.number_field :annual_expenses %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

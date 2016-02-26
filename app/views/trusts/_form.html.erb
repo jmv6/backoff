@@ -1,0 +1,81 @@
+<%= form_for(@trust) do |f| %>
+  <% if @trust.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@trust.errors.count, "error") %> prohibited this trust from being saved:</h2>
+
+      <ul>
+      <% @trust.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :client_id %><br>
+    <%= f.text_field :client_id %>
+  </div>
+  <div class="field">
+    <%= f.label :provider %><br>
+    <%= f.text_field :provider %>
+  </div>
+  <div class="field">
+    <%= f.label :type_of_cover %><br>
+    <%= f.text_field :type_of_cover %>
+  </div>
+  <div class="field">
+    <%= f.label :total_value %><br>
+    <%= f.text_field :total_value %>
+  </div>
+  <div class="field">
+    <%= f.label :payment_received %><br>
+    <%= f.check_box :payment_received %>
+  </div>
+  <div class="field">
+    <%= f.label :loa_sent_to_client %><br>
+    <%= f.check_box :loa_sent_to_client %>
+  </div>
+  <div class="field">
+    <%= f.label :loa_signed_and_received %><br>
+    <%= f.check_box :loa_signed_and_received %>
+  </div>
+  <div class="field">
+    <%= f.label :loa_sent_to_provider %><br>
+    <%= f.check_box :loa_sent_to_provider %>
+  </div>
+  <div class="field">
+    <%= f.label :information_received_from_provider %><br>
+    <%= f.check_box :information_received_from_provider %>
+  </div>
+  <div class="field">
+    <%= f.label :trust_docs_sent_to_client %><br>
+    <%= f.check_box :trust_docs_sent_to_client %>
+  </div>
+  <div class="field">
+    <%= f.label :trust_docs_signed_and_received %><br>
+    <%= f.check_box :trust_docs_signed_and_received %>
+  </div>
+  <div class="field">
+    <%= f.label :sent_to_trustees %><br>
+    <%= f.check_box :sent_to_trustees %>
+  </div>
+  <div class="field">
+    <%= f.label :signed_by_trustees %><br>
+    <%= f.check_box :signed_by_trustees %>
+  </div>
+  <div class="field">
+    <%= f.label :completed %><br>
+    <%= f.check_box :completed %>
+  </div>
+  <div class="field">
+    <%= f.label :notes %><br>
+    <%= f.text_area :notes %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

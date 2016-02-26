@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Trusts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Client</th>
+      <th>Provider</th>
+      <th>Type of cover</th>
+      <th>Total value</th>
+      <th>Payment received</th>
+      <th>Loa sent to client</th>
+      <th>Loa signed and received</th>
+      <th>Loa sent to provider</th>
+      <th>Information received from provider</th>
+      <th>Trust docs sent to client</th>
+      <th>Trust docs signed and received</th>
+      <th>Sent to trustees</th>
+      <th>Signed by trustees</th>
+      <th>Completed</th>
+      <th>Notes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trusts.each do |trust| %>
+      <tr>
+        <td><%= trust.user %></td>
+        <td><%= trust.client %></td>
+        <td><%= trust.provider %></td>
+        <td><%= trust.type_of_cover %></td>
+        <td><%= trust.total_value %></td>
+        <td><%= trust.payment_received %></td>
+        <td><%= trust.loa_sent_to_client %></td>
+        <td><%= trust.loa_signed_and_received %></td>
+        <td><%= trust.loa_sent_to_provider %></td>
+        <td><%= trust.information_received_from_provider %></td>
+        <td><%= trust.trust_docs_sent_to_client %></td>
+        <td><%= trust.trust_docs_signed_and_received %></td>
+        <td><%= trust.sent_to_trustees %></td>
+        <td><%= trust.signed_by_trustees %></td>
+        <td><%= trust.completed %></td>
+        <td><%= trust.notes %></td>
+        <td><%= link_to 'Show', trust %></td>
+        <td><%= link_to 'Edit', edit_trust_path(trust) %></td>
+        <td><%= link_to 'Destroy', trust, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Trust', new_trust_path %>

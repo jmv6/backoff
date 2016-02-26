@@ -1,0 +1,91 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Wills</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Client</th>
+      <th>Spouse</th>
+      <th>Spouse name</th>
+      <th>Relationship</th>
+      <th>Spouse executor</th>
+      <th>Second executor</th>
+      <th>Second executor name</th>
+      <th>Second executor city</th>
+      <th>Alternate executor</th>
+      <th>Alternate executor name</th>
+      <th>Alternate executor city</th>
+      <th>Alternate executor country</th>
+      <th>Children</th>
+      <th>Spouse guardian</th>
+      <th>Alternate guardian</th>
+      <th>Alternate guardian address</th>
+      <th>Gift conditions</th>
+      <th>Gift conditions age</th>
+      <th>Specific gifts</th>
+      <th>Estate residue</th>
+      <th>Wipeout clause</th>
+      <th>Wipeout distribution</th>
+      <th>Pets</th>
+      <th>Pet details carers</th>
+      <th>Additional clauses</th>
+      <th>Notes</th>
+      <th>Draft created</th>
+      <th>Draft sent to client</th>
+      <th>Client approval</th>
+      <th>Final version sent to client</th>
+      <th>Payment received</th>
+      <th>Completed</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @wills.each do |will| %>
+      <tr>
+        <td><%= will.user %></td>
+        <td><%= will.client %></td>
+        <td><%= will.spouse %></td>
+        <td><%= will.spouse_name %></td>
+        <td><%= will.relationship %></td>
+        <td><%= will.spouse_executor %></td>
+        <td><%= will.second_executor %></td>
+        <td><%= will.second_executor_name %></td>
+        <td><%= will.second_executor_city %></td>
+        <td><%= will.alternate_executor %></td>
+        <td><%= will.alternate_executor_name %></td>
+        <td><%= will.alternate_executor_city %></td>
+        <td><%= will.alternate_executor_country %></td>
+        <td><%= will.children %></td>
+        <td><%= will.spouse_guardian %></td>
+        <td><%= will.alternate_guardian %></td>
+        <td><%= will.alternate_guardian_address %></td>
+        <td><%= will.gift_conditions %></td>
+        <td><%= will.gift_conditions_age %></td>
+        <td><%= will.specific_gifts %></td>
+        <td><%= will.estate_residue %></td>
+        <td><%= will.wipeout_clause %></td>
+        <td><%= will.wipeout_distribution %></td>
+        <td><%= will.pets %></td>
+        <td><%= will.pet_details_carers %></td>
+        <td><%= will.additional_clauses %></td>
+        <td><%= will.notes %></td>
+        <td><%= will.draft_created %></td>
+        <td><%= will.draft_sent_to_client %></td>
+        <td><%= will.client_approval %></td>
+        <td><%= will.final_version_sent_to_client %></td>
+        <td><%= will.payment_received %></td>
+        <td><%= will.completed %></td>
+        <td><%= link_to 'Show', will %></td>
+        <td><%= link_to 'Edit', edit_will_path(will) %></td>
+        <td><%= link_to 'Destroy', will, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Will', new_will_path %>

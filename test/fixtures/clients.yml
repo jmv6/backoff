@@ -1,0 +1,75 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: MyString
+  surname: MyString
+  title: MyString
+  date_of_birth: MyString
+  employment_status: MyString
+  marital_status: MyString
+  maiden_name: MyString
+  number_of_dependents: 1
+  dependents_names_ages: MyText
+  nationality: MyString
+  planned_retirement_age: 1
+  smoker: false
+  address_1: MyString
+  address_2: MyString
+  town: MyString
+  post_code: MyString
+  country: MyString
+  preferred_tel: MyString
+  home_telephone: MyString
+  mobile_telephone: MyString
+  best_time: MyText
+  email: MyString
+  children_under_age: false
+  employment_permanent: false
+  occupation: MyString
+  sick_pay_benefit: false
+  user_id: 
+  controlling_director: MyString
+  shareholding: 1
+  year1_profit: 1
+  year2_profit: 1
+  year3_profit: 1
+  accountant_details: MyText
+  annual_income: 1
+  annual_expenses: 1
+
+two:
+  first_name: MyString
+  surname: MyString
+  title: MyString
+  date_of_birth: MyString
+  employment_status: MyString
+  marital_status: MyString
+  maiden_name: MyString
+  number_of_dependents: 1
+  dependents_names_ages: MyText
+  nationality: MyString
+  planned_retirement_age: 1
+  smoker: false
+  address_1: MyString
+  address_2: MyString
+  town: MyString
+  post_code: MyString
+  country: MyString
+  preferred_tel: MyString
+  home_telephone: MyString
+  mobile_telephone: MyString
+  best_time: MyText
+  email: MyString
+  children_under_age: false
+  employment_permanent: false
+  occupation: MyString
+  sick_pay_benefit: false
+  user_id: 
+  controlling_director: MyString
+  shareholding: 1
+  year1_profit: 1
+  year2_profit: 1
+  year3_profit: 1
+  accountant_details: MyText
+  annual_income: 1
+  annual_expenses: 1

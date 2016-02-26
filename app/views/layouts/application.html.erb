@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lincoln Dutch | Back Office</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= favicon_link_tag 'favicon.ico' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+</head>
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top topnav">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+          <img height="60px" class="logo" src="<%= asset_path('lincdutchlogo7.png') %>" />
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+            <% if user_signed_in? %>
+          <li><%= link_to('Home', root_path, class: "link" )%></li>
+          <% if current_user.admin? %>
+          <li><%= link_to('Admin Pages', admin_path) %></li>
+          <% end %>
+          <li><%= link_to('Sales Tools', tools_path) %></li>
+          <li><%= link_to "Add New Client", newclient_path %></li>
+          <li><%= link_to "View My Clients", viewclients_path %></li>
+
+	        <li><%= link_to('Change My Account Details', '/users/edit', class: "link") %></li> 
+
+	        <li><%= link_to('Logout', destroy_user_session_path, :method => :delete, class: "link") %></li>
+		      <% else %>
+		       <li><%= link_to('Login', new_user_session_path, class: "link")  %></li>
+			     <% end %>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+
+    	<p class="notice"><%= notice  %></p>
+      <p class="alert"><%= alert %></p>
+		  <%= yield %>
+</div>
+</body>
+</html>

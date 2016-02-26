@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  client_id: 
+  user_id: 
+  loa_signed: false
+  loa_sent_to_provider: false
+  completed: false
+
+two:
+  client_id: 
+  user_id: 
+  loa_signed: false
+  loa_sent_to_provider: false
+  completed: false
