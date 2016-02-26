@@ -14202,3 +14202,82 @@ Processing by StaticPagesController#home as HTML
   [1m[36mTrust Load (0.5ms)[0m  [1mSELECT "trusts".* FROM "trusts" WHERE "trusts"."completed" = 'f' AND "trusts"."user_id" = 1[0m
   Rendered static_pages/home.html.erb within layouts/application (6.4ms)
 Completed 200 OK in 435ms (Views: 358.8ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/" for ::1 at 2016-02-26 23:11:43 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPensionTransfer Load (0.2ms)[0m  [1mSELECT "pension_transfers".* FROM "pension_transfers" WHERE "pension_transfers"."completed" = 'f' AND "pension_transfers"."user_id" = 1[0m
+  [1m[35mWill Load (0.2ms)[0m  SELECT "wills".* FROM "wills" WHERE "wills"."completed" = 'f' AND "wills"."user_id" = 1
+  [1m[36mTrust Load (0.1ms)[0m  [1mSELECT "trusts".* FROM "trusts" WHERE "trusts"."completed" = 'f' AND "trusts"."user_id" = 1[0m
+  Rendered static_pages/home.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 400ms (Views: 339.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/admin" for ::1 at 2016-02-26 23:11:48 +0000
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "clients"
+  [1m[36mClient Load (0.3ms)[0m  [1mSELECT  "clients".* FROM "clients"  ORDER BY clients.updated_at desc LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "pension_transfers"
+  [1m[36mPensionTransfer Load (0.2ms)[0m  [1mSELECT  "pension_transfers".* FROM "pension_transfers"  ORDER BY pension_transfers.updated_at desc LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "trusts"
+  [1m[36mTrust Load (0.2ms)[0m  [1mSELECT  "trusts".* FROM "trusts"  ORDER BY trusts.updated_at desc LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY users.updated_at desc LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "wills"
+  [1m[36mWill Load (0.3ms)[0m  [1mSELECT  "wills".* FROM "wills"  ORDER BY wills.updated_at desc LIMIT 1[0m
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/rails_admin-0.8.1/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (26.4ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_secondary_navigation.html.haml (5.0ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_navigation.html.haml (13.2ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (5.1ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/pjax.html.haml (3.8ms)
+Completed 200 OK in 823ms (Views: 605.5ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/admin" for ::1 at 2016-02-26 23:11:49 +0000
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "clients"
+  [1m[36mClient Load (0.3ms)[0m  [1mSELECT  "clients".* FROM "clients"  ORDER BY clients.updated_at desc LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "pension_transfers"
+  [1m[36mPensionTransfer Load (0.2ms)[0m  [1mSELECT  "pension_transfers".* FROM "pension_transfers"  ORDER BY pension_transfers.updated_at desc LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "trusts"
+  [1m[36mTrust Load (0.2ms)[0m  [1mSELECT  "trusts".* FROM "trusts"  ORDER BY trusts.updated_at desc LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY users.updated_at desc LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "wills"
+  [1m[36mWill Load (0.2ms)[0m  [1mSELECT  "wills".* FROM "wills"  ORDER BY wills.updated_at desc LIMIT 1[0m
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/rails_admin-0.8.1/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (22.4ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_secondary_navigation.html.haml (2.8ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_navigation.html.haml (11.2ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (4.9ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/pjax.html.haml (3.6ms)
+Completed 200 OK in 426ms (Views: 415.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/admin/user?_pjax=%5Bdata-pjax-container%5D" for ::1 at 2016-02-26 23:11:55 +0000
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"user"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  ORDER BY users.id desc LIMIT 20 OFFSET 0
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/rails_admin-0.8.1/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (64.9ms)
+Completed 200 OK in 90ms (Views: 78.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin/pension_transfer?_pjax=%5Bdata-pjax-container%5D" for ::1 at 2016-02-26 23:11:58 +0000
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"pension_transfer"}
+  [1m[35mPensionTransfer Load (0.2ms)[0m  SELECT  "pension_transfers".* FROM "pension_transfers"  ORDER BY pension_transfers.id desc LIMIT 20 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "pension_transfers"[0m
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/rails_admin-0.8.1/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (25.8ms)
+Completed 200 OK in 58ms (Views: 38.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2016-02-26 23:12:00 +0000
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPensionTransfer Load (0.2ms)[0m  [1mSELECT "pension_transfers".* FROM "pension_transfers" WHERE "pension_transfers"."completed" = 'f' AND "pension_transfers"."user_id" = 1[0m
+  [1m[35mWill Load (0.2ms)[0m  SELECT "wills".* FROM "wills" WHERE "wills"."completed" = 'f' AND "wills"."user_id" = 1
+  [1m[36mTrust Load (0.2ms)[0m  [1mSELECT "trusts".* FROM "trusts" WHERE "trusts"."completed" = 'f' AND "trusts"."user_id" = 1[0m
+  Rendered static_pages/home.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 185ms (Views: 182.0ms | ActiveRecord: 0.7ms)
