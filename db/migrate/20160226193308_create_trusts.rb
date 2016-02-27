@@ -1,6 +1,5 @@
 class CreateTrusts < ActiveRecord::Migration
   def change
-    drop_table :trusts
     create_table :trusts do |t|
       t.references :user, index: true, foreign_key: true
       t.references :client, index: true, foreign_key: true

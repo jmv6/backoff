@@ -1,6 +1,5 @@
 class CreateWills < ActiveRecord::Migration
   def change
-    drop_table :wills
     create_table :wills do |t|
       t.references :user, index: true, foreign_key: true
       t.references :client, index: true, foreign_key: true

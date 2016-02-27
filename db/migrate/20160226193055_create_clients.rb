@@ -1,6 +1,5 @@
 class CreateClients < ActiveRecord::Migration
   def change
-    drop_table :clients  
     create_table :clients do |t|
       t.string :first_name
       t.string :surname

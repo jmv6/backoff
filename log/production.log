@@ -1,0 +1,47 @@
+D, [2016-02-26T23:48:51.597169 #57393] DEBUG -- :   [1m[36m (3.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+D, [2016-02-26T23:48:51.597584 #57393] DEBUG -- :   [1m[35m (0.1ms)[0m  select sqlite_version(*)
+D, [2016-02-26T23:48:51.599186 #57393] DEBUG -- :   [1m[36m (1.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+D, [2016-02-26T23:48:51.600105 #57393] DEBUG -- :   [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+I, [2016-02-26T23:48:51.606601 #57393]  INFO -- : Migrating to DeviseCreateUsers (20160224180344)
+D, [2016-02-26T23:48:51.607367 #57393] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2016-02-26T23:48:51.613207 #57393] DEBUG -- :   [1m[35m (0.5ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+D, [2016-02-26T23:48:51.614464 #57393] DEBUG -- :   [1m[36m (0.3ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+D, [2016-02-26T23:48:51.615415 #57393] DEBUG -- :   [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+D, [2016-02-26T23:48:51.615789 #57393] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+D, [2016-02-26T23:48:51.624797 #57393] DEBUG -- :   [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160224180344"]]
+D, [2016-02-26T23:48:51.626491 #57393] DEBUG -- :   [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+I, [2016-02-26T23:48:51.626570 #57393]  INFO -- : Migrating to AddAttributesToUsers (20160224182850)
+D, [2016-02-26T23:48:51.627086 #57393] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2016-02-26T23:48:51.628622 #57393] DEBUG -- :   [1m[36m (1.2ms)[0m  [1mALTER TABLE "users" ADD "admin" boolean[0m
+D, [2016-02-26T23:48:51.629454 #57393] DEBUG -- :   [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD "first_name" varchar
+D, [2016-02-26T23:48:51.629959 #57393] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mALTER TABLE "users" ADD "surname" varchar[0m
+D, [2016-02-26T23:48:51.630418 #57393] DEBUG -- :   [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD "agent_number" integer
+D, [2016-02-26T23:48:51.631525 #57393] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160224182850"]]
+D, [2016-02-26T23:48:51.632599 #57393] DEBUG -- :   [1m[35m (0.9ms)[0m  commit transaction
+I, [2016-02-26T23:48:51.632667 #57393]  INFO -- : Migrating to CreatePensionTransfers (20160226175856)
+D, [2016-02-26T23:48:51.633183 #57393] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2016-02-26T23:48:51.634443 #57393] DEBUG -- :   [1m[35m (0.4ms)[0m  CREATE TABLE "pension_transfers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "client_id" integer, "user_id" integer, "loa_signed" boolean, "loa_sent_to_provider" boolean, "completed" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+D, [2016-02-26T23:48:51.635063 #57393] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_pension_transfers_on_client_id" ON "pension_transfers" ("client_id")[0m
+D, [2016-02-26T23:48:51.635420 #57393] DEBUG -- :   [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_pension_transfers_on_client_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_pension_transfers_on_client_id' AND type='index'
+
+D, [2016-02-26T23:48:51.635712 #57393] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_pension_transfers_on_user_id" ON "pension_transfers" ("user_id")[0m
+D, [2016-02-26T23:48:51.637007 #57393] DEBUG -- :   [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160226175856"]]
+D, [2016-02-26T23:48:51.638194 #57393] DEBUG -- :   [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+I, [2016-02-26T23:48:51.638255 #57393]  INFO -- : Migrating to CreateClients (20160226193055)
+D, [2016-02-26T23:48:51.639289 #57393] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2016-02-26T23:48:51.639758 #57393] DEBUG -- :   [1m[36m (0.3ms)[0m  [1mDROP TABLE "clients"[0m
+E, [2016-02-26T23:48:51.639816 #57393] ERROR -- : SQLite3::SQLException: no such table: clients: DROP TABLE "clients"
+D, [2016-02-26T23:48:51.640012 #57393] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
