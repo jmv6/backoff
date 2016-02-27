@@ -14355,3 +14355,54 @@ Completed 200 OK in 185ms (Views: 182.0ms | ActiveRecord: 0.7ms)
             FROM sqlite_temp_master
             WHERE name='index_wills_on_user_id' AND type='index'
 [0m
+
+
+Started GET "/admin" for ::1 at 2016-02-27 07:33:46 +0000
+  [1m[35mActiveRecord::SchemaMigration Load (0.9ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "clients"[0m
+  [1m[35mClient Load (1.0ms)[0m  SELECT  "clients".* FROM "clients"  ORDER BY clients.updated_at desc LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "pension_transfers"[0m
+  [1m[35mPensionTransfer Load (0.7ms)[0m  SELECT  "pension_transfers".* FROM "pension_transfers"  ORDER BY pension_transfers.updated_at desc LIMIT 1
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "trusts"[0m
+  [1m[35mTrust Load (0.7ms)[0m  SELECT  "trusts".* FROM "trusts"  ORDER BY trusts.updated_at desc LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"  ORDER BY users.updated_at desc LIMIT 1
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(*) FROM "wills"[0m
+  [1m[35mWill Load (1.1ms)[0m  SELECT  "wills".* FROM "wills"  ORDER BY wills.updated_at desc LIMIT 1
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/rails_admin-0.8.1/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (24.5ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_secondary_navigation.html.haml (2.2ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_navigation.html.haml (10.6ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (5.0ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/pjax.html.haml (2.9ms)
+Completed 200 OK in 784ms (Views: 661.6ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/admin" for ::1 at 2016-02-27 07:33:47 +0000
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "clients"[0m
+  [1m[35mClient Load (0.4ms)[0m  SELECT  "clients".* FROM "clients"  ORDER BY clients.updated_at desc LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "pension_transfers"[0m
+  [1m[35mPensionTransfer Load (0.2ms)[0m  SELECT  "pension_transfers".* FROM "pension_transfers"  ORDER BY pension_transfers.updated_at desc LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "trusts"[0m
+  [1m[35mTrust Load (0.2ms)[0m  SELECT  "trusts".* FROM "trusts"  ORDER BY trusts.updated_at desc LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  ORDER BY users.updated_at desc LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "wills"[0m
+  [1m[35mWill Load (0.5ms)[0m  SELECT  "wills".* FROM "wills"  ORDER BY wills.updated_at desc LIMIT 1
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/rails_admin-0.8.1/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (16.9ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_secondary_navigation.html.haml (0.9ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_navigation.html.haml (5.1ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (8.3ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/pjax.html.haml (4.1ms)
+Completed 200 OK in 606ms (Views: 587.5ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/admin/client?_pjax=%5Bdata-pjax-container%5D" for ::1 at 2016-02-27 07:33:53 +0000
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"client"}
+  [1m[36mClient Load (0.4ms)[0m  [1mSELECT  "clients".* FROM "clients"  ORDER BY clients.id desc LIMIT 20 OFFSET 0[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "clients"[0m
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/rails_admin-0.8.1/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (95.1ms)
+Completed 200 OK in 170ms (Views: 114.6ms | ActiveRecord: 0.8ms)
