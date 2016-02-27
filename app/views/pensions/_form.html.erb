@@ -1,10 +1,10 @@
-<%= form_for(@pension_transfer) do |f| %>
-  <% if @pension_transfer.errors.any? %>
+<%= form_for(@pension) do |f| %>
+  <% if @pension.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@pension_transfer.errors.count, "error") %> prohibited this pension_transfer from being saved:</h2>
+      <h2><%= pluralize(@pension.errors.count, "error") %> prohibited this pension from being saved:</h2>
 
       <ul>
-      <% @pension_transfer.errors.full_messages.each do |message| %>
+      <% @pension.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>

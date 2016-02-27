@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @pension.client %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @pension.user %>
+</p>
+
+<p>
+  <strong>Loa signed:</strong>
+  <%= @pension.loa_signed %>
+</p>
+
+<p>
+  <strong>Loa sent to provider:</strong>
+  <%= @pension.loa_sent_to_provider %>
+</p>
+
+<p>
+  <strong>Completed:</strong>
+  <%= @pension.completed %>
+</p>
+
+<%= link_to 'Edit', edit_pension_path(@pension) %> |
+<%= link_to 'Back', pensions_path %>

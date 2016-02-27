@@ -1,6 +1,6 @@
-class CreatePensionTransfers < ActiveRecord::Migration
+class CreatePensions < ActiveRecord::Migration
   def change
-    create_table :pension_transfers do |t|
+    create_table :pensions do |t|
       t.references :client, index: true, foreign_key: true
       t.references :user, index: true, foreign_key: true
       t.boolean :loa_signed

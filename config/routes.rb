@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
+  resources :pensions
   resources :wills
   resources :trusts
   resources :clients
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  resources :pension_transfers
   devise_for :users
   get 'static_pages/home'
 

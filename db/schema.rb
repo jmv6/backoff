@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160226193333) do
+ActiveRecord::Schema.define(version: 20160227082127) do
 
   create_table "clients", force: :cascade do |t|
     t.string   "first_name"
@@ -67,6 +67,19 @@ ActiveRecord::Schema.define(version: 20160226193333) do
 
   add_index "pension_transfers", ["client_id"], name: "index_pension_transfers_on_client_id"
   add_index "pension_transfers", ["user_id"], name: "index_pension_transfers_on_user_id"
+
+  create_table "pensions", force: :cascade do |t|
+    t.integer  "client_id"
+    t.integer  "user_id"
+    t.boolean  "loa_signed"
+    t.boolean  "loa_sent_to_provider"
+    t.boolean  "completed"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "pensions", ["client_id"], name: "index_pensions_on_client_id"
+  add_index "pensions", ["user_id"], name: "index_pensions_on_user_id"
 
   create_table "trusts", force: :cascade do |t|
     t.integer  "user_id"
