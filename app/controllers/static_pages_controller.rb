@@ -3,7 +3,7 @@ class StaticPagesController < ApplicationController
   def home
   	@trust = Trust.where(:completed => false, :user => current_user.id)
   	@will = Will.where(:completed => false, :user => current_user.id)
-  	@pension = PensionTransfer.where(:completed => false, :user => current_user.id)
+  	@pension = Pension.where(:completed => false, :user => current_user.id)
   end
 
   def tools
