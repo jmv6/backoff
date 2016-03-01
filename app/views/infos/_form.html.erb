@@ -1,0 +1,53 @@
+<%= form_for(@info) do |f| %>
+  <% if @info.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@info.errors.count, "error") %> prohibited this info from being saved:</h2>
+
+      <ul>
+      <% @info.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class = "col-md-3">
+    <div class="field">
+      <%= f.label :first_name %><br>
+      <%= f.text_field :first_name %>
+    </div>
+    <div class="field">
+      <%= f.label :surname %><br>
+      <%= f.text_field :surname %>
+    </div>
+    <div class="field">
+      <%= f.label :email %><br>
+      <%= f.text_field :email %>
+    </div>
+    <div class="field">
+      <%= f.label :telephone_number %><br>
+      <%= f.text_field :telephone_number %>
+    </div>
+    <strong>Please tick all that apply:</strong>
+    <div class="field">
+      
+      <%= f.check_box :financial_review %> <%= f.label :financial_review %>
+    </div>
+    <div class="field">
+      
+      <%= f.check_box :estate_planning %> <%= f.label :estate_planning %>
+    </div>
+    <div class="field">
+      
+      <%= f.check_box :investments %> <%= f.label :investments %>
+    </div>
+  </div>
+  <div class="col-md-9">
+      <div class="field">
+        <%= f.label :notes %><br>
+        <%= f.text_area :notes, cols: "100", rows: "20" %>
+      </div>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+  </div>
+<% end %>

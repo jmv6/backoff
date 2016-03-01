@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :infos
   resources :pensions
   resources :wills
   resources :trusts

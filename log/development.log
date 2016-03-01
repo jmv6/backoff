@@ -14660,3 +14660,1275 @@ Migrating to CreatePensions (20160227082127)
             FROM sqlite_temp_master
             WHERE name='index_wills_on_user_id' AND type='index'
 [0m
+
+
+Started GET "/" for ::1 at 2016-02-27 08:30:17 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPension Load (0.2ms)[0m  [1mSELECT "pensions".* FROM "pensions" WHERE "pensions"."completed" = 'f' AND "pensions"."user_id" = 1[0m
+  [1m[35mWill Load (0.2ms)[0m  SELECT "wills".* FROM "wills" WHERE "wills"."completed" = 'f' AND "wills"."user_id" = 1
+  [1m[36mTrust Load (0.2ms)[0m  [1mSELECT "trusts".* FROM "trusts" WHERE "trusts"."completed" = 'f' AND "trusts"."user_id" = 1[0m
+  Rendered static_pages/home.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 571ms (Views: 505.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/admin" for ::1 at 2016-02-27 08:30:19 +0000
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "clients"
+  [1m[36mClient Load (0.3ms)[0m  [1mSELECT  "clients".* FROM "clients"  ORDER BY clients.updated_at desc LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "pensions"
+  [1m[36mPension Load (0.2ms)[0m  [1mSELECT  "pensions".* FROM "pensions"  ORDER BY pensions.updated_at desc LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "trusts"
+  [1m[36mTrust Load (0.2ms)[0m  [1mSELECT  "trusts".* FROM "trusts"  ORDER BY trusts.updated_at desc LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY users.updated_at desc LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "wills"
+  [1m[36mWill Load (0.2ms)[0m  [1mSELECT  "wills".* FROM "wills"  ORDER BY wills.updated_at desc LIMIT 1[0m
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/rails_admin-0.8.1/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (24.2ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_secondary_navigation.html.haml (3.6ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_navigation.html.haml (15.7ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (9.0ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/pjax.html.haml (5.6ms)
+Completed 200 OK in 5974ms (Views: 5755.8ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/admin" for ::1 at 2016-02-27 08:30:25 +0000
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "clients"
+  [1m[36mClient Load (0.4ms)[0m  [1mSELECT  "clients".* FROM "clients"  ORDER BY clients.updated_at desc LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "pensions"
+  [1m[36mPension Load (0.2ms)[0m  [1mSELECT  "pensions".* FROM "pensions"  ORDER BY pensions.updated_at desc LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "trusts"
+  [1m[36mTrust Load (0.3ms)[0m  [1mSELECT  "trusts".* FROM "trusts"  ORDER BY trusts.updated_at desc LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY users.updated_at desc LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "wills"
+  [1m[36mWill Load (0.3ms)[0m  [1mSELECT  "wills".* FROM "wills"  ORDER BY wills.updated_at desc LIMIT 1[0m
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/rails_admin-0.8.1/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (33.8ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_secondary_navigation.html.haml (1.0ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_navigation.html.haml (6.6ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (5.4ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/pjax.html.haml (4.1ms)
+Completed 200 OK in 751ms (Views: 731.8ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/admin" for ::1 at 2016-02-27 08:30:26 +0000
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "clients"
+  [1m[36mClient Load (0.4ms)[0m  [1mSELECT  "clients".* FROM "clients"  ORDER BY clients.updated_at desc LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "pensions"
+  [1m[36mPension Load (0.2ms)[0m  [1mSELECT  "pensions".* FROM "pensions"  ORDER BY pensions.updated_at desc LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "trusts"
+  [1m[36mTrust Load (0.2ms)[0m  [1mSELECT  "trusts".* FROM "trusts"  ORDER BY trusts.updated_at desc LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY users.updated_at desc LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "wills"
+  [1m[36mWill Load (0.2ms)[0m  [1mSELECT  "wills".* FROM "wills"  ORDER BY wills.updated_at desc LIMIT 1[0m
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/rails_admin-0.8.1/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (17.7ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_secondary_navigation.html.haml (1.6ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_navigation.html.haml (8.7ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (5.9ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/pjax.html.haml (1.4ms)
+Completed 200 OK in 500ms (Views: 485.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for ::1 at 2016-03-01 06:37:03 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPension Load (0.6ms)[0m  [1mSELECT "pensions".* FROM "pensions" WHERE "pensions"."completed" = 'f' AND "pensions"."user_id" = 1[0m
+  [1m[35mWill Load (0.7ms)[0m  SELECT "wills".* FROM "wills" WHERE "wills"."completed" = 'f' AND "wills"."user_id" = 1
+  [1m[36mTrust Load (0.6ms)[0m  [1mSELECT "trusts".* FROM "trusts" WHERE "trusts"."completed" = 'f' AND "trusts"."user_id" = 1[0m
+  Rendered static_pages/home.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 598ms (Views: 527.7ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/assets/application.self-318cf36ca106a6023467803a2b55ea70f2f359f9cced9fcff5dec57928f2dc85.css?body=1" for ::1 at 2016-03-01 06:37:04 +0000
+
+
+Started GET "/assets/pensions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 06:37:04 +0000
+
+
+Started GET "/assets/pensions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 06:37:04 +0000
+
+
+Started DELETE "/users/sign_out" for ::1 at 2016-03-01 06:37:06 +0000
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"fJbsXvhcvAGNlCdU/+49wffenzuh30nTDrQnYoP/5Tuj/L6uDmTx22PmJ2Of/OBzH31qX4S0lpaQ1eMghjBBEQ=="}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 24ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-03-01 06:37:06 +0000
+Processing by StaticPagesController#home as HTML
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-03-01 06:37:06 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (24.9ms)
+Completed 200 OK in 256ms (Views: 253.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-03-01 07:00:17 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.2.2) lib/active_record/migration.rb:393:in `check_pending!'
+  activerecord (4.2.2) lib/active_record/migration.rb:374:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:88:in `call'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:776:in `_run_call_callbacks'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.2) lib/rails/engine.rb:518:in `call'
+  railties (4.2.2) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/jeffreyvernes/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/jeffreyvernes/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/jeffreyvernes/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.9ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (84.9ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (72.0ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (166.7ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateInfos (20160301065726)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "infos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "surname" varchar, "email" varchar, "telephone_number" varchar, "financial_review" boolean, "estate_planning" boolean, "investments" boolean, "notes" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160301065726"]]
+  [1m[36m (3.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_clients_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_clients_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_pension_transfers_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_pension_transfers_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_pension_transfers_on_client_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_pension_transfers_on_client_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_pensions_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_pensions_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_pensions_on_client_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_pensions_on_client_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_trusts_on_client_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_trusts_on_client_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_trusts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_trusts_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_wills_on_client_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_wills_on_client_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_wills_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_wills_on_user_id' AND type='index'
+[0m
+
+
+Started GET "/" for ::1 at 2016-03-01 07:00:35 +0000
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Processing by StaticPagesController#home as HTML
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-03-01 07:00:35 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 2653ms (Views: 2640.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/infos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:00:38 +0000
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:00:38 +0000
+
+
+Started GET "/assets/infos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:00:38 +0000
+
+
+Started GET "/assets/scaffolds.self-e6ff32e782e0a76ff3f9c00a58283ce4cdb847a91cd05b3853cdabb5bcd775b5.css?body=1" for ::1 at 2016-03-01 07:00:38 +0000
+
+
+Started GET "/assets/pensions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:00:38 +0000
+
+
+Started GET "/assets/trusts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:00:38 +0000
+
+
+Started GET "/assets/wills.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:00:38 +0000
+
+
+Started GET "/assets/clients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:00:38 +0000
+
+
+Started GET "/assets/application.self-318cf36ca106a6023467803a2b55ea70f2f359f9cced9fcff5dec57928f2dc85.css?body=1" for ::1 at 2016-03-01 07:00:38 +0000
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-03-01 07:00:38 +0000
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-03-01 07:00:38 +0000
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-01 07:00:38 +0000
+
+
+Started GET "/assets/clients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:00:38 +0000
+
+
+Started GET "/assets/pensions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:00:38 +0000
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:00:38 +0000
+
+
+Started GET "/assets/trusts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:00:38 +0000
+
+
+Started GET "/assets/wills.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:00:38 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-03-01 07:00:38 +0000
+
+
+Started GET "/assets/lincdutchlogo7-73a1e00f17ccf31c08a49b822747fa2938c8f57e257796d81f85f0110aeab0ed.png" for ::1 at 2016-03-01 07:00:38 +0000
+
+
+Started GET "/assets/favicon-1615ac5bc72c4025e34de5b544bc91d2535f387ed977daf71d6ffd85a5688dc4.ico" for ::1 at 2016-03-01 07:00:38 +0000
+
+
+Started GET "/infos/new" for ::1 at 2016-03-01 07:00:45 +0000
+Processing by InfosController#new as HTML
+  Rendered infos/_form.html.erb (7.6ms)
+  Rendered infos/new.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 302ms (Views: 284.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/infos" for ::1 at 2016-03-01 07:00:52 +0000
+Processing by InfosController#index as HTML
+  [1m[36mInfo Load (0.2ms)[0m  [1mSELECT "infos".* FROM "infos"[0m
+  Rendered infos/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 216ms (Views: 214.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/infos" for ::1 at 2016-03-01 07:01:34 +0000
+Processing by InfosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hpmPTPweHniEgGj0cIxD0gGxau/snfkyA7wY4+CbfX1jprJ2TM4FiwztaR5KJDvK3zrXgDOmH7B9KvWWlbgSlg==", "info"=>{"first_name"=>"Jeffrey", "surname"=>"Vernes", "email"=>"jeff.vernes@gmail.com", "telephone_number"=>"07527856381", "financial_review"=>"1", "estate_planning"=>"1", "investments"=>"1", "notes"=>""}, "commit"=>"Create Info"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "infos" ("first_name", "surname", "email", "telephone_number", "financial_review", "estate_planning", "investments", "notes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Jeffrey"], ["surname", "Vernes"], ["email", "jeff.vernes@gmail.com"], ["telephone_number", "07527856381"], ["financial_review", "t"], ["estate_planning", "t"], ["investments", "t"], ["notes", ""], ["created_at", "2016-03-01 07:01:34.252402"], ["updated_at", "2016-03-01 07:01:34.252402"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/infos/1
+Completed 302 Found in 7ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/infos/1" for ::1 at 2016-03-01 07:01:34 +0000
+Processing by InfosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mInfo Load (0.4ms)[0m  [1mSELECT  "infos".* FROM "infos" WHERE "infos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered infos/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 190ms (Views: 188.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/infos" for ::1 at 2016-03-01 07:01:36 +0000
+Processing by InfosController#index as HTML
+  [1m[35mInfo Load (0.2ms)[0m  SELECT "infos".* FROM "infos"
+  Rendered infos/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 195ms (Views: 194.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/infos/1" for ::1 at 2016-03-01 07:03:00 +0000
+Processing by InfosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mInfo Load (0.1ms)[0m  [1mSELECT  "infos".* FROM "infos" WHERE "infos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered infos/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 186ms (Views: 184.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/clients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:03:01 +0000
+
+
+Started GET "/assets/scaffolds.self-e6ff32e782e0a76ff3f9c00a58283ce4cdb847a91cd05b3853cdabb5bcd775b5.css?body=1" for ::1 at 2016-03-01 07:03:01 +0000
+
+
+Started GET "/assets/pensions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:03:01 +0000
+
+
+Started GET "/assets/trusts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:03:01 +0000
+
+
+Started GET "/assets/infos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:03:01 +0000
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:03:01 +0000
+
+
+Started GET "/assets/wills.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:03:01 +0000
+
+
+Started GET "/assets/application.self-318cf36ca106a6023467803a2b55ea70f2f359f9cced9fcff5dec57928f2dc85.css?body=1" for ::1 at 2016-03-01 07:03:01 +0000
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-03-01 07:03:01 +0000
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-03-01 07:03:01 +0000
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-01 07:03:01 +0000
+
+
+Started GET "/assets/clients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:03:01 +0000
+
+
+Started GET "/assets/infos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:03:01 +0000
+
+
+Started GET "/assets/pensions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:03:01 +0000
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:03:01 +0000
+
+
+Started GET "/assets/trusts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:03:01 +0000
+
+
+Started GET "/assets/wills.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:03:01 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-03-01 07:03:01 +0000
+
+
+Started GET "/assets/lincdutchlogo7-73a1e00f17ccf31c08a49b822747fa2938c8f57e257796d81f85f0110aeab0ed.png" for ::1 at 2016-03-01 07:03:01 +0000
+
+
+Started GET "/assets/favicon-1615ac5bc72c4025e34de5b544bc91d2535f387ed977daf71d6ffd85a5688dc4.ico" for ::1 at 2016-03-01 07:03:01 +0000
+
+
+Started GET "/infos/" for ::1 at 2016-03-01 07:03:21 +0000
+Processing by InfosController#index as HTML
+  [1m[35mInfo Load (0.2ms)[0m  SELECT "infos".* FROM "infos"
+  Rendered infos/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 170ms (Views: 169.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/infos/new" for ::1 at 2016-03-01 07:03:26 +0000
+Processing by InfosController#new as HTML
+  Rendered infos/_form.html.erb (4.2ms)
+  Rendered infos/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 189ms (Views: 188.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/infos/1" for ::1 at 2016-03-01 07:03:29 +0000
+Processing by InfosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mInfo Load (0.1ms)[0m  [1mSELECT  "infos".* FROM "infos" WHERE "infos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered infos/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 173ms (Views: 171.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/infos/1" for ::1 at 2016-03-01 07:04:20 +0000
+Processing by InfosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mInfo Load (0.1ms)[0m  SELECT  "infos".* FROM "infos" WHERE "infos"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered infos/show.html.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined method `admin?' for nil:NilClass):
+    1: <p id="notice">Thank you for sending us your enquiry. We will be in toch in within the next 24 hours.</p>
+    2: 
+    3: <% if current_user.admin? %>
+    4: <p>
+    5:   <strong>First name:</strong>
+    6:   <%= @info.first_name %>
+  app/views/infos/show.html.erb:3:in `_app_views_infos_show_html_erb___3150049918126980285_70331795061520'
+
+
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.8ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (89.9ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (69.3ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (155.0ms)
+
+
+Started GET "/infos/1" for ::1 at 2016-03-01 07:05:03 +0000
+Processing by InfosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mInfo Load (0.1ms)[0m  [1mSELECT  "infos".* FROM "infos" WHERE "infos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered infos/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 197ms (Views: 195.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/clients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:05:03 +0000
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:05:03 +0000
+
+
+Started GET "/assets/trusts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:05:03 +0000
+
+
+Started GET "/assets/scaffolds.self-e6ff32e782e0a76ff3f9c00a58283ce4cdb847a91cd05b3853cdabb5bcd775b5.css?body=1" for ::1 at 2016-03-01 07:05:03 +0000
+
+
+Started GET "/assets/infos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:05:03 +0000
+
+
+Started GET "/assets/pensions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:05:03 +0000
+
+
+Started GET "/assets/wills.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:05:03 +0000
+
+
+Started GET "/assets/application.self-318cf36ca106a6023467803a2b55ea70f2f359f9cced9fcff5dec57928f2dc85.css?body=1" for ::1 at 2016-03-01 07:05:03 +0000
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-03-01 07:05:03 +0000
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-03-01 07:05:03 +0000
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-01 07:05:03 +0000
+
+
+Started GET "/assets/clients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:05:03 +0000
+
+
+Started GET "/assets/infos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:05:03 +0000
+
+
+Started GET "/assets/pensions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:05:03 +0000
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:05:03 +0000
+
+
+Started GET "/assets/trusts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:05:03 +0000
+
+
+Started GET "/assets/wills.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:05:03 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-03-01 07:05:03 +0000
+
+
+Started GET "/assets/lincdutchlogo7-73a1e00f17ccf31c08a49b822747fa2938c8f57e257796d81f85f0110aeab0ed.png" for ::1 at 2016-03-01 07:05:04 +0000
+
+
+Started GET "/assets/favicon-1615ac5bc72c4025e34de5b544bc91d2535f387ed977daf71d6ffd85a5688dc4.ico" for ::1 at 2016-03-01 07:05:04 +0000
+
+
+Started GET "/infos/new" for ::1 at 2016-03-01 07:07:41 +0000
+Processing by InfosController#new as HTML
+  Rendered infos/_form.html.erb (5.5ms)
+  Rendered infos/new.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 174ms (Views: 173.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/clients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:07:41 +0000
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:07:41 +0000
+
+
+Started GET "/assets/pensions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:07:41 +0000
+
+
+Started GET "/assets/scaffolds.self-e6ff32e782e0a76ff3f9c00a58283ce4cdb847a91cd05b3853cdabb5bcd775b5.css?body=1" for ::1 at 2016-03-01 07:07:41 +0000
+
+
+Started GET "/assets/infos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:07:41 +0000
+
+
+Started GET "/assets/trusts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:07:41 +0000
+
+
+Started GET "/assets/application.self-318cf36ca106a6023467803a2b55ea70f2f359f9cced9fcff5dec57928f2dc85.css?body=1" for ::1 at 2016-03-01 07:07:41 +0000
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-03-01 07:07:41 +0000
+
+
+Started GET "/assets/wills.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:07:41 +0000
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-03-01 07:07:41 +0000
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-01 07:07:41 +0000
+
+
+Started GET "/assets/clients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:07:41 +0000
+
+
+Started GET "/assets/infos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:07:41 +0000
+
+
+Started GET "/assets/pensions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:07:41 +0000
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:07:41 +0000
+
+
+Started GET "/assets/trusts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:07:41 +0000
+
+
+Started GET "/assets/wills.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:07:41 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-03-01 07:07:41 +0000
+
+
+Started GET "/assets/lincdutchlogo7-73a1e00f17ccf31c08a49b822747fa2938c8f57e257796d81f85f0110aeab0ed.png" for ::1 at 2016-03-01 07:07:41 +0000
+
+
+Started GET "/assets/favicon-1615ac5bc72c4025e34de5b544bc91d2535f387ed977daf71d6ffd85a5688dc4.ico" for ::1 at 2016-03-01 07:07:41 +0000
+
+
+Started GET "/infos/new" for ::1 at 2016-03-01 07:09:04 +0000
+Processing by InfosController#new as HTML
+  Rendered infos/_form.html.erb (9.7ms)
+  Rendered infos/new.html.erb within layouts/application (11.6ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `merge' for "height:500px; width:700px;":String):
+    43:   <div class="col-md-9">
+    44:       <div class="field">
+    45:         <%= f.label :notes %><br>
+    46:         <%= f.text_area :notes, style = "height:500px; width:700px;" %>
+    47:       </div>
+    48:       <div class="actions">
+    49:         <%= f.submit %>
+  app/views/infos/_form.html.erb:46:in `block in _app_views_infos__form_html_erb__2140784857045319393_70331791382120'
+  app/views/infos/_form.html.erb:1:in `_app_views_infos__form_html_erb__2140784857045319393_70331791382120'
+  app/views/infos/new.html.erb:3:in `_app_views_infos_new_html_erb___3176020510078131685_70331728964400'
+
+
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.9ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.6ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (91.9ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (70.9ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/jeffreyvernes/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (154.5ms)
+
+
+Started GET "/infos/new" for ::1 at 2016-03-01 07:10:15 +0000
+Processing by InfosController#new as HTML
+  Rendered infos/_form.html.erb (4.9ms)
+  Rendered infos/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 207ms (Views: 205.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/infos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:10:15 +0000
+
+
+Started GET "/assets/clients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:10:15 +0000
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:10:15 +0000
+
+
+Started GET "/assets/pensions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:10:15 +0000
+
+
+Started GET "/assets/scaffolds.self-e6ff32e782e0a76ff3f9c00a58283ce4cdb847a91cd05b3853cdabb5bcd775b5.css?body=1" for ::1 at 2016-03-01 07:10:15 +0000
+
+
+Started GET "/assets/trusts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:10:15 +0000
+
+
+Started GET "/assets/wills.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:10:15 +0000
+
+
+Started GET "/assets/application.self-318cf36ca106a6023467803a2b55ea70f2f359f9cced9fcff5dec57928f2dc85.css?body=1" for ::1 at 2016-03-01 07:10:15 +0000
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-03-01 07:10:15 +0000
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-03-01 07:10:15 +0000
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-01 07:10:15 +0000
+
+
+Started GET "/assets/clients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:10:15 +0000
+
+
+Started GET "/assets/infos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:10:15 +0000
+
+
+Started GET "/assets/pensions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:10:15 +0000
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:10:15 +0000
+
+
+Started GET "/assets/trusts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:10:15 +0000
+
+
+Started GET "/assets/wills.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:10:15 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-03-01 07:10:15 +0000
+
+
+Started GET "/assets/lincdutchlogo7-73a1e00f17ccf31c08a49b822747fa2938c8f57e257796d81f85f0110aeab0ed.png" for ::1 at 2016-03-01 07:10:15 +0000
+
+
+Started GET "/assets/favicon-1615ac5bc72c4025e34de5b544bc91d2535f387ed977daf71d6ffd85a5688dc4.ico" for ::1 at 2016-03-01 07:10:15 +0000
+
+
+Started GET "/infos/new" for ::1 at 2016-03-01 07:10:30 +0000
+Processing by InfosController#new as HTML
+  Rendered infos/_form.html.erb (5.2ms)
+  Rendered infos/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 188ms (Views: 187.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/clients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:10:30 +0000
+
+
+Started GET "/assets/infos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:10:30 +0000
+
+
+Started GET "/assets/pensions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:10:30 +0000
+
+
+Started GET "/assets/trusts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:10:30 +0000
+
+
+Started GET "/assets/scaffolds.self-e6ff32e782e0a76ff3f9c00a58283ce4cdb847a91cd05b3853cdabb5bcd775b5.css?body=1" for ::1 at 2016-03-01 07:10:30 +0000
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:10:30 +0000
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-01 07:10:30 +0000
+
+
+Started GET "/assets/application.self-318cf36ca106a6023467803a2b55ea70f2f359f9cced9fcff5dec57928f2dc85.css?body=1" for ::1 at 2016-03-01 07:10:30 +0000
+
+
+Started GET "/assets/wills.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:10:30 +0000
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-03-01 07:10:30 +0000
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-03-01 07:10:30 +0000
+
+
+Started GET "/assets/clients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:10:30 +0000
+
+
+Started GET "/assets/pensions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:10:30 +0000
+
+
+Started GET "/assets/infos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:10:30 +0000
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:10:30 +0000
+
+
+Started GET "/assets/trusts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:10:30 +0000
+
+
+Started GET "/assets/wills.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:10:30 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-03-01 07:10:30 +0000
+
+
+Started GET "/assets/lincdutchlogo7-73a1e00f17ccf31c08a49b822747fa2938c8f57e257796d81f85f0110aeab0ed.png" for ::1 at 2016-03-01 07:10:30 +0000
+
+
+Started GET "/assets/favicon-1615ac5bc72c4025e34de5b544bc91d2535f387ed977daf71d6ffd85a5688dc4.ico" for ::1 at 2016-03-01 07:10:30 +0000
+
+
+Started GET "/infos/new" for ::1 at 2016-03-01 07:10:44 +0000
+Processing by InfosController#new as HTML
+  Rendered infos/_form.html.erb (4.4ms)
+  Rendered infos/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 190ms (Views: 189.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/clients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:10:44 +0000
+
+
+Started GET "/assets/infos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:10:44 +0000
+
+
+Started GET "/assets/trusts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:10:44 +0000
+
+
+Started GET "/assets/pensions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:10:44 +0000
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:10:44 +0000
+
+
+Started GET "/assets/scaffolds.self-e6ff32e782e0a76ff3f9c00a58283ce4cdb847a91cd05b3853cdabb5bcd775b5.css?body=1" for ::1 at 2016-03-01 07:10:44 +0000
+
+
+Started GET "/assets/wills.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:10:44 +0000
+
+
+Started GET "/assets/application.self-318cf36ca106a6023467803a2b55ea70f2f359f9cced9fcff5dec57928f2dc85.css?body=1" for ::1 at 2016-03-01 07:10:44 +0000
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-03-01 07:10:44 +0000
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-03-01 07:10:44 +0000
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-01 07:10:44 +0000
+
+
+Started GET "/assets/clients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:10:44 +0000
+
+
+Started GET "/assets/infos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:10:44 +0000
+
+
+Started GET "/assets/pensions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:10:44 +0000
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:10:44 +0000
+
+
+Started GET "/assets/trusts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:10:44 +0000
+
+
+Started GET "/assets/wills.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:10:44 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-03-01 07:10:44 +0000
+
+
+Started GET "/assets/lincdutchlogo7-73a1e00f17ccf31c08a49b822747fa2938c8f57e257796d81f85f0110aeab0ed.png" for ::1 at 2016-03-01 07:10:44 +0000
+
+
+Started GET "/assets/favicon-1615ac5bc72c4025e34de5b544bc91d2535f387ed977daf71d6ffd85a5688dc4.ico" for ::1 at 2016-03-01 07:10:44 +0000
+
+
+Started GET "/infos/new" for ::1 at 2016-03-01 07:10:58 +0000
+Processing by InfosController#new as HTML
+  Rendered infos/_form.html.erb (4.7ms)
+  Rendered infos/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 198ms (Views: 196.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/clients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:10:58 +0000
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:10:58 +0000
+
+
+Started GET "/assets/scaffolds.self-e6ff32e782e0a76ff3f9c00a58283ce4cdb847a91cd05b3853cdabb5bcd775b5.css?body=1" for ::1 at 2016-03-01 07:10:58 +0000
+
+
+Started GET "/assets/infos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:10:58 +0000
+
+
+Started GET "/assets/pensions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:10:58 +0000
+
+
+Started GET "/assets/trusts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:10:58 +0000
+
+
+Started GET "/assets/wills.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:10:58 +0000
+
+
+Started GET "/assets/application.self-318cf36ca106a6023467803a2b55ea70f2f359f9cced9fcff5dec57928f2dc85.css?body=1" for ::1 at 2016-03-01 07:10:58 +0000
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-03-01 07:10:58 +0000
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-03-01 07:10:58 +0000
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-01 07:10:58 +0000
+
+
+Started GET "/assets/clients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:10:58 +0000
+
+
+Started GET "/assets/infos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:10:58 +0000
+
+
+Started GET "/assets/pensions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:10:58 +0000
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:10:58 +0000
+
+
+Started GET "/assets/trusts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:10:58 +0000
+
+
+Started GET "/assets/wills.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:10:58 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-03-01 07:10:58 +0000
+
+
+Started GET "/assets/lincdutchlogo7-73a1e00f17ccf31c08a49b822747fa2938c8f57e257796d81f85f0110aeab0ed.png" for ::1 at 2016-03-01 07:10:58 +0000
+
+
+Started GET "/assets/favicon-1615ac5bc72c4025e34de5b544bc91d2535f387ed977daf71d6ffd85a5688dc4.ico" for ::1 at 2016-03-01 07:10:58 +0000
+
+
+Started GET "/infos/new" for ::1 at 2016-03-01 07:11:25 +0000
+Processing by InfosController#new as HTML
+  Rendered infos/_form.html.erb (3.9ms)
+  Rendered infos/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 192ms (Views: 191.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/trusts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:11:25 +0000
+
+
+Started GET "/assets/scaffolds.self-e6ff32e782e0a76ff3f9c00a58283ce4cdb847a91cd05b3853cdabb5bcd775b5.css?body=1" for ::1 at 2016-03-01 07:11:25 +0000
+
+
+Started GET "/assets/clients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:11:25 +0000
+
+
+Started GET "/assets/infos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:11:25 +0000
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:11:25 +0000
+
+
+Started GET "/assets/pensions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:11:25 +0000
+
+
+Started GET "/assets/wills.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:11:25 +0000
+
+
+Started GET "/assets/application.self-318cf36ca106a6023467803a2b55ea70f2f359f9cced9fcff5dec57928f2dc85.css?body=1" for ::1 at 2016-03-01 07:11:25 +0000
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-03-01 07:11:25 +0000
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-01 07:11:25 +0000
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-03-01 07:11:25 +0000
+
+
+Started GET "/assets/pensions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:11:25 +0000
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:11:25 +0000
+
+
+Started GET "/assets/clients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:11:25 +0000
+
+
+Started GET "/assets/trusts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:11:25 +0000
+
+
+Started GET "/assets/infos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:11:25 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-03-01 07:11:25 +0000
+
+
+Started GET "/assets/wills.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:11:25 +0000
+
+
+Started GET "/assets/lincdutchlogo7-73a1e00f17ccf31c08a49b822747fa2938c8f57e257796d81f85f0110aeab0ed.png" for ::1 at 2016-03-01 07:11:25 +0000
+
+
+Started GET "/assets/favicon-1615ac5bc72c4025e34de5b544bc91d2535f387ed977daf71d6ffd85a5688dc4.ico" for ::1 at 2016-03-01 07:11:25 +0000
+
+
+Started GET "/infos/new" for ::1 at 2016-03-01 07:12:39 +0000
+Processing by InfosController#new as HTML
+  Rendered infos/_form.html.erb (6.0ms)
+  Rendered infos/new.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 176ms (Views: 174.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/clients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:12:40 +0000
+
+
+Started GET "/assets/infos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:12:40 +0000
+
+
+Started GET "/assets/trusts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:12:40 +0000
+
+
+Started GET "/assets/pensions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:12:40 +0000
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:12:40 +0000
+
+
+Started GET "/assets/scaffolds.self-e6ff32e782e0a76ff3f9c00a58283ce4cdb847a91cd05b3853cdabb5bcd775b5.css?body=1" for ::1 at 2016-03-01 07:12:40 +0000
+
+
+Started GET "/assets/wills.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:12:40 +0000
+
+
+Started GET "/assets/application.self-318cf36ca106a6023467803a2b55ea70f2f359f9cced9fcff5dec57928f2dc85.css?body=1" for ::1 at 2016-03-01 07:12:40 +0000
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-03-01 07:12:40 +0000
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-03-01 07:12:40 +0000
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-01 07:12:40 +0000
+
+
+Started GET "/assets/clients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:12:40 +0000
+
+
+Started GET "/assets/infos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:12:40 +0000
+
+
+Started GET "/assets/pensions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:12:40 +0000
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:12:40 +0000
+
+
+Started GET "/assets/trusts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:12:40 +0000
+
+
+Started GET "/assets/wills.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:12:40 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-03-01 07:12:40 +0000
+
+
+Started GET "/assets/lincdutchlogo7-73a1e00f17ccf31c08a49b822747fa2938c8f57e257796d81f85f0110aeab0ed.png" for ::1 at 2016-03-01 07:12:40 +0000
+
+
+Started GET "/assets/favicon-1615ac5bc72c4025e34de5b544bc91d2535f387ed977daf71d6ffd85a5688dc4.ico" for ::1 at 2016-03-01 07:12:40 +0000
+
+
+Started GET "/infos/new" for ::1 at 2016-03-01 07:13:29 +0000
+Processing by InfosController#new as HTML
+  Rendered infos/_form.html.erb (5.2ms)
+  Rendered infos/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 196ms (Views: 195.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/clients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:13:29 +0000
+
+
+Started GET "/assets/scaffolds.self-e6ff32e782e0a76ff3f9c00a58283ce4cdb847a91cd05b3853cdabb5bcd775b5.css?body=1" for ::1 at 2016-03-01 07:13:29 +0000
+
+
+Started GET "/assets/infos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:13:29 +0000
+
+
+Started GET "/assets/pensions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:13:29 +0000
+
+
+Started GET "/assets/application.self-318cf36ca106a6023467803a2b55ea70f2f359f9cced9fcff5dec57928f2dc85.css?body=1" for ::1 at 2016-03-01 07:13:29 +0000
+
+
+Started GET "/assets/trusts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:13:29 +0000
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:13:29 +0000
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-03-01 07:13:29 +0000
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-03-01 07:13:29 +0000
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-01 07:13:29 +0000
+
+
+Started GET "/assets/wills.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:13:29 +0000
+
+
+Started GET "/assets/clients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:13:29 +0000
+
+
+Started GET "/assets/infos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:13:29 +0000
+
+
+Started GET "/assets/pensions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:13:29 +0000
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:13:29 +0000
+
+
+Started GET "/assets/trusts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:13:29 +0000
+
+
+Started GET "/assets/wills.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:13:29 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-03-01 07:13:29 +0000
+
+
+Started GET "/assets/lincdutchlogo7-73a1e00f17ccf31c08a49b822747fa2938c8f57e257796d81f85f0110aeab0ed.png" for ::1 at 2016-03-01 07:13:29 +0000
+
+
+Started GET "/assets/favicon-1615ac5bc72c4025e34de5b544bc91d2535f387ed977daf71d6ffd85a5688dc4.ico" for ::1 at 2016-03-01 07:13:29 +0000
+
+
+Started GET "/infos/new" for ::1 at 2016-03-01 07:13:50 +0000
+Processing by InfosController#new as HTML
+  Rendered infos/_form.html.erb (6.6ms)
+  Rendered infos/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 198ms (Views: 196.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/clients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:13:50 +0000
+
+
+Started GET "/assets/trusts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:13:50 +0000
+
+
+Started GET "/assets/pensions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:13:50 +0000
+
+
+Started GET "/assets/scaffolds.self-e6ff32e782e0a76ff3f9c00a58283ce4cdb847a91cd05b3853cdabb5bcd775b5.css?body=1" for ::1 at 2016-03-01 07:13:50 +0000
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:13:50 +0000
+
+
+Started GET "/assets/infos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:13:50 +0000
+
+
+Started GET "/assets/wills.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:13:50 +0000
+
+
+Started GET "/assets/application.self-318cf36ca106a6023467803a2b55ea70f2f359f9cced9fcff5dec57928f2dc85.css?body=1" for ::1 at 2016-03-01 07:13:50 +0000
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-03-01 07:13:50 +0000
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-03-01 07:13:50 +0000
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-01 07:13:50 +0000
+
+
+Started GET "/assets/clients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:13:50 +0000
+
+
+Started GET "/assets/infos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:13:50 +0000
+
+
+Started GET "/assets/pensions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:13:50 +0000
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:13:50 +0000
+
+
+Started GET "/assets/trusts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:13:50 +0000
+
+
+Started GET "/assets/wills.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:13:50 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-03-01 07:13:50 +0000
+
+
+Started GET "/assets/lincdutchlogo7-73a1e00f17ccf31c08a49b822747fa2938c8f57e257796d81f85f0110aeab0ed.png" for ::1 at 2016-03-01 07:13:50 +0000
+
+
+Started GET "/assets/favicon-1615ac5bc72c4025e34de5b544bc91d2535f387ed977daf71d6ffd85a5688dc4.ico" for ::1 at 2016-03-01 07:13:50 +0000
+
+
+Started GET "/infos/new" for ::1 at 2016-03-01 07:14:25 +0000
+Processing by InfosController#new as HTML
+  Rendered infos/_form.html.erb (4.3ms)
+  Rendered infos/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 168ms (Views: 167.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/clients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:14:25 +0000
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:14:25 +0000
+
+
+Started GET "/assets/pensions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:14:25 +0000
+
+
+Started GET "/assets/infos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:14:25 +0000
+
+
+Started GET "/assets/scaffolds.self-e6ff32e782e0a76ff3f9c00a58283ce4cdb847a91cd05b3853cdabb5bcd775b5.css?body=1" for ::1 at 2016-03-01 07:14:25 +0000
+
+
+Started GET "/assets/trusts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:14:25 +0000
+
+
+Started GET "/assets/wills.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-01 07:14:25 +0000
+
+
+Started GET "/assets/application.self-318cf36ca106a6023467803a2b55ea70f2f359f9cced9fcff5dec57928f2dc85.css?body=1" for ::1 at 2016-03-01 07:14:25 +0000
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-03-01 07:14:25 +0000
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-03-01 07:14:25 +0000
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-01 07:14:25 +0000
+
+
+Started GET "/assets/clients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:14:25 +0000
+
+
+Started GET "/assets/infos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:14:25 +0000
+
+
+Started GET "/assets/pensions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:14:25 +0000
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:14:25 +0000
+
+
+Started GET "/assets/trusts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:14:25 +0000
+
+
+Started GET "/assets/wills.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-01 07:14:25 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-03-01 07:14:25 +0000
+
+
+Started GET "/assets/lincdutchlogo7-73a1e00f17ccf31c08a49b822747fa2938c8f57e257796d81f85f0110aeab0ed.png" for ::1 at 2016-03-01 07:14:25 +0000
+
+
+Started GET "/assets/favicon-1615ac5bc72c4025e34de5b544bc91d2535f387ed977daf71d6ffd85a5688dc4.ico" for ::1 at 2016-03-01 07:14:25 +0000
